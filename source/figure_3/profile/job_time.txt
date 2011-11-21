@@ -1,0 +1,45 @@
+498636
+1
+Started at: Wed Aug 17 18:20:07 2011
+Exited at: Wed Aug 17 18:22:31 2011
+
+498637
+4
+Started at: Wed Aug 17 18:21:45 2011
+Exited at: Wed Aug 17 18:25:12 2011
+
+498638
+16
+Started at: Wed Aug 17 18:22:03 2011
+Exited at: Wed Aug 17 18:25:42 2011
+
+498640
+64
+Started at: Wed Aug 17 18:22:03 2011
+Exited at: Wed Aug 17 18:27:02 2011
+
+498642
+256
+Started at: Wed Aug 17 18:31:08 2011
+Exited at: Wed Aug 17 18:39:42 2011
+
+498647
+1024
+Started at: Wed Aug 17 18:48:18 2011
+Exited at: Wed Aug 17 19:14:26 2011
+
+498649
+4096
+Started at: Wed Aug 17 18:50:30 2011
+Exited at: Wed Aug 17 19:38:19 2011
+
+500001
+16384
+Started at: Thu Aug 18 15:24:19 2011
+Exited at: Thu Aug 18 18:19:00 2011
+
+509266
+65536 (this specific job includes Euler and acoustics applications)
+Started at: Fri Sep  9 18:29:33 2011
+Exited at: Sat Sep 10 13:25:50 2011
+
