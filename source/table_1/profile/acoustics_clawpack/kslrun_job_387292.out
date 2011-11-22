@@ -1,0 +1,10 @@
+Reading data file, first 5 lines are comments: claw.data   
+ +++ mx,my:  500 500
+ running...
+  
+Reading data file, first 5 lines are comments: setprob.data
+CLAW2EZ: Frame    0 output files done at time t =   .0000D+00
+
+CLAW2EZ: Frame    1 output files done at time t =   .4000D+00
+
+ End: total= 192.2700043  user= 192.2700043  system= 0.0000000000E+00

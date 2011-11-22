@@ -20,7 +20,7 @@ Environment Variables:
 export CLAW=<path_to>/clawpack
 export RIEMANN=$CLAW/riemann
 export PYCLAW=$CLAW/pyclaw
-source <path_to>//prod.sh # a copy of prod.sh is in this directory.
+source <path_to>/prod.sh # a copy of prod.sh is in this directory.
 
 
 Building:

@@ -1,0 +1,13 @@
+yes
+/home/amal/experiment/SerialComparison/acouistics/petclaw
+2011-06-26 09:28:16,568 INFO CLAW: Solution 0 computed for time t=0.000000
+steps 445
+2011-06-26 09:33:30,872 INFO CLAW: Solution 1 computed for time t=0.400000
+number of steps: 445
+yes
+/home/amal/experiment/SerialComparison/acouistics/petclaw
+2011-06-26 09:33:33,417 INFO CLAW: Solution 0 computed for time t=0.000000
+steps 445
+2011-06-26 09:38:47,609 INFO CLAW: Solution 1 computed for time t=0.400000
+number of steps: 445
+first call 318.58706212 second call 316.736829996
