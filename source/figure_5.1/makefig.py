@@ -79,15 +79,15 @@ serialComputations = []
 
 
 for i in [1,16,256,4096,65536]:
-    p = pstats.Stats('profile/profile0_'+str(i))
+    p = pstats.Stats('experiment/profile/profile0_'+str(i))
     prof = {}
     for x in p.stats:
         prof[x[2]] = p.stats[x]
-    cflReduce.append(round(prof["<method 'max' of 'petsc4py.PETSc.Vec' objects>"][3],3))
-    parallelInit.append(round(prof["init_q_da"][3],3) + round(prof["init_aux_da"][3],3))
-    globalToLocal.append(round(prof["<method 'globalToLocal' of 'petsc4py.PETSc.DM' objects>"][3],3))
-    localToGlobal.append(round(prof["<method 'localToGlobal' of 'petsc4py.PETSc.DM' objects>"][3],3))
-    evolveToTime.append(round(prof["evolve_to_time"][3],3))
+    cflReduce.append(round(prof["<method 'max' of 'petsc4py.PETSc.Vec' objects>"][3],1))
+    parallelInit.append(round(prof["init_q_da"][3],1) + round(prof["init_aux_da"][3],1))
+    globalToLocal.append(round(prof["<method 'globalToLocal' of 'petsc4py.PETSc.DM' objects>"][3],1))
+    localToGlobal.append(round(prof["<method 'localToGlobal' of 'petsc4py.PETSc.DM' objects>"][3],1))
+    evolveToTime.append(round(prof["evolve_to_time"][3],1))
 
 serialComputations =[ evolveToTime[i]- cflReduce[i]- globalToLocal[i]- localToGlobal[i] for i in range(len(evolveToTime))]
 
