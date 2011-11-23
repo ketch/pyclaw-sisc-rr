@@ -14,10 +14,11 @@ figure_5.1: source/figure_5.1/makefig.py
 	python $^ $(BUILD_DIR)/$@
 	@echo "***\nmanually crop image vertically and save in .pdf format\n***"
 
-figure_5.1/experiment: source/ 
+figure_5.1/experiment: source/figure_5.1/experiment/src2.f source/figure_5.1/experiment/shockbubble.py source/figure_5.1/experiment/Makefile
 	@mkdir -p $(BUILD_DIR)/$@	
 	@cat source/figure_5.1/experiment/README.txt
 	@cp source/figure_5.1/experiment/README.txt $(BUILD_DIR)/$@
+	@cp $^ $(BUILD_DIR)/$@
 
 #catch all for unimplemented targets
 %: source/%/placeholder.txt 
