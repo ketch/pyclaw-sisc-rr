@@ -7,6 +7,15 @@ import matplotlib
 from pylab import *
 from matplotlib.colors import colorConverter
 
+params = {'backend': 'ps',
+          'axes.labelsize': 10,
+          'text.fontsize': 10,
+          'legend.fontsize': 10,
+          'xtick.labelsize': 8,
+          'ytick.labelsize': 8,
+          'text.usetex': True,}
+rcParams.update(params)
+
 
 #Some simple functions to generate colours.
 def pastel(colour, weight=2.4):
@@ -55,16 +64,16 @@ def get_colours(n):
 
 
 
-axes([0.26, 0.25, 0.55, 0.55])   # leave room below the axes for the table
+axes([0.35, 0.25, 0.55, 0.35])   # leave room below the axes for the table
 
-data = [[  0.001, 0.6, 4.1, 4, 3.9, 3.8, 3.8, 4, 4.2],
-        [  2, 1.5, 1.5, 1.5, 1.5, 1.6, 1.9, 2.9, 6.6],
-        [  5.9, 3.6, 3.6, 3.6, 3.6, 3.6, 3.6, 3.6, 3.6],
-        [  4.9, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5],
-        [  88.2, 94.8, 92.7, 92.5, 92.6, 92.7, 92.7, 92.6, 92.8]]
+data = [[  0.001,  4.1, 3.9,  3.8, 4.2],
+        [  2,      1.5, 1.5,  1.9, 6.6],
+        [  5.9,    3.6, 3.6,  3.6, 3.6],
+        [  4.9,    2.5, 2.5,  2.5, 2.5],
+        [  88.2,   92.7,92.6, 92.7,92.8]]
 
 
-colLabels = ['1','4', '16', '64', '256', '1024', '4096', '16384', '65536']
+colLabels = ['1','16', '256', '4096', '65536']
 
 rowLabels = ['CFL Reduce', 'Parallel Initialization', 'Global to Local', 'Local to Global', 'Serial Computations']
 # Get some pastel shades for the colours
@@ -81,7 +90,7 @@ for row in xrange(rows):
 
 cellText = data
 # Add total efficiency to the data
-data.append( [sum([row[i] for row in data]) for i in range(9)])
+data.append( [sum([row[i] for row in data]) for i in range(len(colLabels))])
 data[-1] = data[-1][0]/data[-1]
 data[-1] = [round(x,2) for x in data [-1]]
 rowLabels.append('Total Efficiency')
@@ -92,7 +101,7 @@ table(cellText=cellText,
       rowLabels=rowLabels, rowColours=colours,
       colLabels=colLabels,
       loc='bottom')
-ylabel("Execution Time Per Core in Seconds")
+ylabel("Execution Time Per Core (s)")
 figtext(.5, .02, "Number of Cores")
 vals = arange(0, 121, 20)
 yticks(vals, ['%d' % val for val in vals])
@@ -101,10 +110,14 @@ xticks([])
 #show()
 
 import sys
+import os.path
 if len(sys.argv) > 1:
     build_dir=sys.argv[1]
 else:
     build_dir=os.path.curdir
 
-import os.path
-savefig(os.path.join(build_dir,'euler_weak_scaling.png'))
+f=gcf()
+f.set_figheight(8) 
+f.set_figwidth(5.5) 
+
+savefig(os.path.join(build_dir,'euler_weak_scaling.eps'))

@@ -15,12 +15,7 @@ $(BUILD_DIR):
 figure_5.1: source/figure_5.1/makefig.py 
 	@mkdir -p $(BUILD_DIR)/$@
 	python $^ $(BUILD_DIR)/$@
-	convert $(BUILD_DIR)/$@/euler_weak_scaling.png -gravity South \
-          -background white -splice 0x1  -background black -splice 0x1 \
-          -trim  +repage -chop 0x1 $(BUILD_DIR)/$@/euler_weak_scaling.png
-	convert $(BUILD_DIR)/$@/euler_weak_scaling.png -gravity West \
-          -background white -splice 1x0  -background black -splice 1x0 \
-          -trim  +repage -chop 1x0 $(BUILD_DIR)/$@/euler_weak_scaling.png
+	@echo "***\nmanually crop image vertically and save in .pdf format\n***"
 
 #catch all for unimplemented target experiments
 %/experiment: source/%/experiment/placeholder.txt
