@@ -55,7 +55,7 @@ def get_colours(n):
 
 
 
-axes([0.3, 0.25, 0.55, 0.55])   # leave room below the axes for the table
+axes([0.26, 0.25, 0.55, 0.55])   # leave room below the axes for the table
 
 data = [[  0.001, 0.6, 4.1, 4, 3.9, 3.8, 3.8, 4, 4.2],
         [  2, 1.5, 1.5, 1.5, 1.5, 1.6, 1.9, 2.9, 6.6],
@@ -65,6 +65,7 @@ data = [[  0.001, 0.6, 4.1, 4, 3.9, 3.8, 3.8, 4, 4.2],
 
 
 colLabels = ['1','4', '16', '64', '256', '1024', '4096', '16384', '65536']
+
 rowLabels = ['CFL Reduce', 'Parallel Initialization', 'Global to Local', 'Local to Global', 'Serial Computations']
 # Get some pastel shades for the colours
 colours = get_colours(len(rowLabels))
@@ -96,14 +97,14 @@ figtext(.5, .02, "Number of Cores")
 vals = arange(0, 121, 20)
 yticks(vals, ['%d' % val for val in vals])
 xticks([])
-import os
-try:
-    os.makedirs('build')
-except OSError:
-    print "directory already exists, ignoring"  
-
-savefig("./build/euler_weak_scaling.pdf")
 
 #show()
 
-savefig('./table.png')
+import sys
+if len(sys.argv) > 1:
+    build_dir=sys.argv[1]
+else:
+    build_dir=os.path.curdir
+
+import os.path
+savefig(os.path.join(build_dir,'euler_weak_scaling.png'))
