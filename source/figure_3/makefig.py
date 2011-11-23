@@ -96,7 +96,13 @@ figtext(.5, .02, "Number of Cores")
 vals = arange(0, 121, 20)
 yticks(vals, ['%d' % val for val in vals])
 xticks([])
+import os
+try:
+    os.makedirs('build')
+except OSError:
+    print "directory already exists, ignoring"  
 
+savefig("./build/euler_weak_scaling.pdf")
 
 #show()
 

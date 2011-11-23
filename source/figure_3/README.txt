@@ -31,7 +31,7 @@ Environment Variables:
 export CLAW=<path_to>/clawpack
 export RIEMANN=$CLAW/riemann
 export PYCLAW=$CLAW/pyclaw
-source <path_to>//prod.sh # a copy of prod.sh is in this directory.
+source <path_to>/prod.sh # a copy of prod.sh is in this directory.
 
 Building:
 Check https://github.com/clawpack/pyclaw/wiki/Running-on-shaheen/2328cbd968ede04f28e07bcecf5827b13fbf99a3 for details 

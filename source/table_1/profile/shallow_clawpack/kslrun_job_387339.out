@@ -1,0 +1,11 @@
+ running...
+  
+CLAW2EZ: Frame    0 matlab plot files done at time t =   .0000D+00
+
+ End: total= 707.860101938247681  user= 707.860101938247681  system= 0.000000000000000000E+00
+ accepted steps 465 rejected steps 1
+CLAW2EZ: Frame    1 matlab plot files done at time t =   .2500D+01
+
+ End: total= 707.860101938247681  user= 707.860101938247681  system= 0.000000000000000000E+00
+ total accepted steps 465 total rejected steps 1
+ End: total= 714.9099731  user= 714.9099731  system= 0.0000000000E+00
