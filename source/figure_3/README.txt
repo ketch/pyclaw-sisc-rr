@@ -1,17 +1,28 @@
-Figure 3 shows the profiling results of a weak scaling experiment for an Euler application. The experiment was run on 1, 4, 16, 64, 256, 1024, 4096, 16384 and 65536 cores.
+ABOUT THIS EXPERIMENT
+===============
+
+Figure 3 shows the profiling results of a weak scaling experiment for an Euler application run on the Shaheen supercomputer
+at KAUST. This experiment was computed over a range of 1, 4, 16, 64, 256, 1024, 4096, 16384 and 65536 cores.
+
+RESPONSIBLE AUTHORS
+==============
+Amal Al-Ghamdi
+Aron Ahmadia
+
+EXPERIMENTAL SETUP
+=============
 
 Hardware:
-Blue Gene/P Shaheen supercomputer which has 16 racks of Quad-Core PowerPC 450 nodes with 4GB of available RAM for each.
+The Shaheen supercomputer, a 16-rack Blue Gene/P with 4GB of RAM per each of its 16,384 quadcore PowerPC 450 nodes.
 
 Software:
 Python 2.6
 numpy 2.0.0dev8672
 PETSc 3.1.8
 petsc4py 1.1.2 **(dev-june2011)
-XLF 11.1 for compiling
-Pyclaw github repository: ec035e4f06e93100590d branch: scaling_shaheen
+IBM XLF 11.1 compiler
+PyClaw github repository: ec035e4f06e93100590d branch: scaling_shaheen
 Riemann github repository: 184798b81bcc38e7ab4d  branch: master
-
 
 Application:
 The Euler application to run is found under the ./experiment directory.
@@ -21,7 +32,6 @@ export CLAW=<path_to>/clawpack
 export RIEMANN=$CLAW/riemann
 export PYCLAW=$CLAW/pyclaw
 source <path_to>//prod.sh # a copy of prod.sh is in this directory.
-
 
 Building:
 Check https://github.com/clawpack/pyclaw/wiki/Running-on-shaheen/2328cbd968ede04f28e07bcecf5827b13fbf99a3 for details 
