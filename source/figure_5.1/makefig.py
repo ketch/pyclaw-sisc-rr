@@ -66,11 +66,38 @@ def get_colours(n):
 
 axes([0.35, 0.25, 0.55, 0.35])   # leave room below the axes for the table
 
-data = [[  0.001,  4.1, 3.9,  3.8, 4.2],
-        [  2,      1.5, 1.5,  1.9, 6.6],
-        [  5.9,    3.6, 3.6,  3.6, 3.6],
-        [  4.9,    2.5, 2.5,  2.5, 2.5],
-        [  88.2,   92.7,92.6, 92.7,92.8]]
+
+
+import pstats
+
+cflReduce = []
+parallelInit = []
+globalToLocal = []
+localToGlobal = []
+evolveToTime = []
+serialComputations = []
+
+
+for i in [1,16,256,4096,65536]:
+    p = pstats.Stats('experiment/profile/profile0_'+str(i))
+    prof = {}
+    for x in p.stats:
+        prof[x[2]] = p.stats[x]
+    cflReduce.append(round(prof["<method 'max' of 'petsc4py.PETSc.Vec' objects>"][3],1))
+    parallelInit.append(round(prof["init_q_da"][3],1) + round(prof["init_aux_da"][3],1))
+    globalToLocal.append(round(prof["<method 'globalToLocal' of 'petsc4py.PETSc.DM' objects>"][3],1))
+    localToGlobal.append(round(prof["<method 'localToGlobal' of 'petsc4py.PETSc.DM' objects>"][3],1))
+    evolveToTime.append(round(prof["evolve_to_time"][3],1))
+
+serialComputations =[ evolveToTime[i]- cflReduce[i]- globalToLocal[i]- localToGlobal[i] for i in range(len(evolveToTime))]
+
+
+#data = [[  0.001, 0.6, 4.1, 4, 3.9, 3.8, 3.8, 4, 4.2],
+#        [  2, 1.5, 1.5, 1.5, 1.5, 1.6, 1.9, 2.9, 6.6],
+#        [  5.9, 3.6, 3.6, 3.6, 3.6, 3.6, 3.6, 3.6, 3.6],
+#        [  4.9, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5],
+#        [  88.199, 94.8, 92.7, 92.5, 92.6, 92.7, 92.7, 92.6, 92.8]]
+data = [ cflReduce ,parallelInit , globalToLocal , localToGlobal , serialComputations ]
 
 
 colLabels = ['1','16', '256', '4096', '65536']
@@ -109,7 +136,7 @@ xticks([])
 
 #show()
 
-import sys
+import sys, os
 import os.path
 if len(sys.argv) > 1:
     build_dir=sys.argv[1]
