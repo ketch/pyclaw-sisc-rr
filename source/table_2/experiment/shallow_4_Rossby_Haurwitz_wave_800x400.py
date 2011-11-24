@@ -493,8 +493,8 @@ def shallow_4_Rossby_Haurwitz(iplot=0,htmlplot=False,outdir='./_output'):
     claw = pyclaw.Controller()
     claw.keep_copy = False
     claw.outstyle = 1
-    claw.nout = 10
-    claw.tfinal = 10
+    claw.nout = 50
+    claw.tfinal = 50
     claw.solution = pyclaw.Solution(state)
     claw.solver = solver
     claw.outdir = outdir
