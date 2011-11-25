@@ -60,34 +60,30 @@ figure_7.1/experiment: source/figure_7.1/experiment/shockbubble.py source/figure
 
 figure_7.2: source/figure_7.2/makefig.py source/figure_7.2/setplot.py source/figure_7.2/README.txt
 	@mkdir -p $(BUILD_DIR)/$@
-	@cat source/figure_7.2/README.txt
-	@cp source/figure_7.2/README.txt $(BUILD_DIR)/$@
+	@cat source/figure_7.2/experiment/README.txt
+	@cp source/figure_7.2/experiment/README.txt $(BUILD_DIR)/$@
 	@echo "Building figure 7.2 from pyclaw output"
 	(cd source/figure_7.2 && $(MAKE) $@)
 
 figure_7.2/experiment: source/figure_7.2/experiment/shockbubble.py source/figure_7.2/experiment/Makefile 
 	@mkdir -p $(BUILD_DIR)/$@	
-	@cat source/figure_7.2/experiment/README.txt
-	@cp source/figure_7.2/experiment/README.txt $(BUILD_DIR)/$@
+	@cat source/figure_7.2/README.txt
+	@cp source/figure_7.2/README.txt $(BUILD_DIR)/$@
 	@echo "Re-running shock-bubble interaction"
 	(cd source/figure_7.2/experiment && time $(MAKE) data)
 	@cp $^ $(BUILD_DIR)/$@
 
-#catch all for unimplemented targets
-%: source/%/placeholder.txt 
-	@cat $^
+figure_7.3: source/figure_7.3/makefig.py source/figure_7.3/setplot.py source/figure_7.3/README.txt
 	@mkdir -p $(BUILD_DIR)/$@
-	@cp $^ $(BUILD_DIR)/$@/
+	@cat source/figure_7.3/experiment/README.txt
+	@cp source/figure_7.3/experiment/README.txt $(BUILD_DIR)/$@
+	@echo "Building figure 7.3 from pyclaw output"
+	(cd source/figure_7.3 && $(MAKE) $@)
 
-#catch all for unimplemented target experiments
-%/experiment: source/%/experiment/placeholder.txt
-	@cat $^	
-	@mkdir -p $(BUILD_DIR)/$@
+figure_7.3/experiment: source/figure_7.3/experiment/shockbubble.py source/figure_7.3/experiment/Makefile 
+	@mkdir -p $(BUILD_DIR)/$@	
+	@cat source/figure_7.3/experiment/README.txt
+	@cp source/figure_7.3/experiment/README.txt $(BUILD_DIR)/$@
+	@echo "Re-running WENO comparison of shock-bubble interaction"
+	(cd source/figure_7.3/experiment && time $(MAKE) data)
 	@cp $^ $(BUILD_DIR)/$@
-
-# example
-table_1/experiment: source/table_1/experiment/placeholder.txt
-	@cat $^	
-	@mkdir -p $(BUILD_DIR)/$@
-	@cp $^ $(BUILD_DIR)/$@/
-

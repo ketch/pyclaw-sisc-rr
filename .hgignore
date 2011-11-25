@@ -3,4 +3,8 @@ syntax: glob
 build/
 source/*/_plots/*
 pyclaw.log
+petclaw.log
 *.pyc
+*.o
+*.so
+.DS_Store

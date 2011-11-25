@@ -7,6 +7,5 @@ Computing this experiment required slightly more than 2 hours on a single core o
 
 RESPONSIBLE AUTHORS
 ==============
-Matteo Parsani
 David Ketcheson
 Aron Ahmadia
