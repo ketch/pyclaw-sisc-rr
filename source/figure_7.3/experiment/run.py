@@ -25,7 +25,7 @@ def run(outdir, order=-1):
 run('reference', order=-1)
 run('weno05', order=5)
 run('weno07', order=7)
-run('weno09', order=9)
+#run('weno09', order=9)
 
 # cfl_desired=0.2, cfl_max=0.3
 #run('weno09_2', order=9)
