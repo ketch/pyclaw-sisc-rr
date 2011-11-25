@@ -19,6 +19,18 @@ table_5.1/experiment: source/table_5.1/experiment/*
 	@echo "Copying table 5.1 experiment source files to $(BUILD_DIR)/$@"
 	@cp -r $^ $(BUILD_DIR)/$@
 
+table_7.1: source/table_7.1/README.txt
+	@mkdir -p $(BUILD_DIR)/$@
+	@cat source/table_7.1/README.txt
+	@cp source/table_7.1/README.txt $(BUILD_DIR)/$@
+
+table_7.1/experiment: source/table_7.1/experiment/*
+	@mkdir -p $(BUILD_DIR)/$@	
+	@cat source/table_7.1/experiment/README.txt
+	@cp source/table_7.1/experiment/README.txt $(BUILD_DIR)/$@
+	@echo "Copying table 7.1 experiment source files to $(BUILD_DIR)/$@"
+	@cp -r $^ $(BUILD_DIR)/$@
+
 figure_5.1: source/figure_5.1/makefig.py source/figure_5.1/README.txt
 	@mkdir -p $(BUILD_DIR)/$@
 	@cat source/figure_5.1/README.txt
