@@ -1,3 +1,6 @@
 syntax: glob
 
 build/
+source/*/_plots/*
+pyclaw.log
+*.pyc
