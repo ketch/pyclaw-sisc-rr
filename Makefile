@@ -1,8 +1,7 @@
 CWD := $(shell pwd)
 export BUILD_DIR := $(CWD)/build
 
-all: $(BUILD_DIR) table_1 figure_5.1 table_2 \
-     figure_4 figure_5 figure_6 figure_7
+all: $(BUILD_DIR) table_5.1/experiment figure_5.1/experiment table_7.1/experiment figure_7.1/experiment figure_7.2/experiment figure_7.3/experiment figure_7.4/experiment figure_7.5/experiment table_5.1 figure_5.1 table_7.1 figure_7.1 figure_7.2 figure_7.3 figure_7.4 figure_7.5 
 
 $(BUILD_DIR):
 	mkdir -p $(BUILD_DIR)
@@ -50,10 +49,10 @@ figure_7.1: source/figure_7.1/README.txt
 	@cat source/figure_7.1/README.txt
 	@cp source/figure_7.1/README.txt $(BUILD_DIR)/$@
 
-figure_7.1/experiment: source/figure_7.1/experiment/shockbubble.py source/figure_7.1/experiment/Makefile 
+figure_7.1/experiment: source/figure_7.1/experiment/shallow_4_Rossby_Haurwitz_wave.py source/figure_7.1/experiment/Makefile 
 	@mkdir -p $(BUILD_DIR)/$@	
-	@cat source/figure_7.1/experiment/README.txt
-	@cp source/figure_7.1/experiment/README.txt $(BUILD_DIR)/$@
+	@cat source/figure_7.1/README.txt
+	@cp source/figure_7.1/README.txt $(BUILD_DIR)/$@
 	@echo "Re-running Rossby-Haurwitz experiment"
 	(cd source/figure_7.1/experiment && time $(MAKE) data)
 	@cp $^ $(BUILD_DIR)/$@

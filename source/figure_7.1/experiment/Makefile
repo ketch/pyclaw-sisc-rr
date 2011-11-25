@@ -28,3 +28,5 @@ INITIALIZE_SOURCE = mapc2p.f setaux.f qinit.f src2.f
 problem.so: $(INITIALIZE_SOURCE)
 	$(F2PY) -m problem -c $^
 
+data: problem.so classic2.so shallow_4_Rossby_Haurwitz_wave.py
+	python shallow_4_Rossby_Haurwitz_wave.py
