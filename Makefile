@@ -87,3 +87,30 @@ figure_7.3/experiment: source/figure_7.3/experiment/shockbubble.py source/figure
 	@echo "Re-running WENO comparison of shock-bubble interaction"
 	(cd source/figure_7.3/experiment && time $(MAKE) data)
 	@cp $^ $(BUILD_DIR)/$@
+
+figure_7.4: source/figure_7.4/plots.py source/figure_7.4/README.txt
+	@mkdir -p $(BUILD_DIR)/$@
+	@cat source/figure_7.4/README.txt
+	@cp source/figure_7.4/README.txt $(BUILD_DIR)/$@
+	@echo "Building figure 7.4 from pyclaw output"
+	(cd source/figure_7.4 && $(MAKE) $@)
+
+figure_7.4/experiment: source/figure_7.4/experiment/psystem.py 
+	@mkdir -p $(BUILD_DIR)/$@	
+	@cat source/figure_7.4/experiment/README.txt
+	@cp source/figure_7.4/experiment/README.txt $(BUILD_DIR)/$@
+	@cp $^ $(BUILD_DIR)/$@
+
+figure_7.5: source/figure_7.5/plots.py source/figure_7.5/README.txt
+	@mkdir -p $(BUILD_DIR)/$@
+	@cat source/figure_7.5/README.txt
+	@cp source/figure_7.5/README.txt $(BUILD_DIR)/$@
+	@echo "Building figure 7.5 from pyclaw output"
+	(cd source/figure_7.5 && $(MAKE) $@)
+
+figure_7.5/experiment: source/figure_7.5/experiment/psystem.py 
+	@mkdir -p $(BUILD_DIR)/$@	
+	@cat source/figure_7.5/experiment/README.txt
+	@cp source/figure_7.5/experiment/README.txt $(BUILD_DIR)/$@
+	@cp $^ $(BUILD_DIR)/$@
+
