@@ -1,5 +1,5 @@
 ABOUT THIS EXPERIMENT
-===============
+================
 Figure 7.1 shows the water height of the zonal wave number 4 Rossby-Haurwitz problem at different times over a 400x200
 grid, illustrating the ability of PyClaw to handle problems on non-trivial geometries.
 
