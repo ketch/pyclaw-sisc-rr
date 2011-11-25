@@ -1,5 +1,5 @@
 CWD := $(shell pwd)
-BUILD_DIR=$(CWD)/build
+export BUILD_DIR := $(CWD)/build
 
 all: $(BUILD_DIR) table_1 figure_5.1 table_2 \
      figure_4 figure_5 figure_6 figure_7
@@ -21,12 +21,25 @@ figure_5.1/experiment: source/figure_5.1/experiment/src2.f source/figure_5.1/exp
 	@cp source/figure_5.1/experiment/README.txt $(BUILD_DIR)/$@
 	@cp $^ $(BUILD_DIR)/$@
 
+figure_7.1: source/figure_7.1/README.txt
+	@mkdir -p $(BUILD_DIR)/$@
+	@cat source/figure_7.1/README.txt
+	@cp source/figure_7.1/README.txt $(BUILD_DIR)/$@
+
+figure_7.1/experiment: source/figure_7.1/experiment/shockbubble.py source/figure_7.1/experiment/Makefile 
+	@mkdir -p $(BUILD_DIR)/$@	
+	@cat source/figure_7.1/experiment/README.txt
+	@cp source/figure_7.1/experiment/README.txt $(BUILD_DIR)/$@
+	@echo "Re-running Rossby-Haurwitz experiment"
+	(cd source/figure_7.1/experiment && time $(MAKE) data)
+	@cp $^ $(BUILD_DIR)/$@
+
 figure_7.2: source/figure_7.2/makefig.py source/figure_7.2/setplot.py source/figure_7.2/README.txt
 	@mkdir -p $(BUILD_DIR)/$@
 	@cat source/figure_7.2/README.txt
 	@cp source/figure_7.2/README.txt $(BUILD_DIR)/$@
 	@echo "Building figure 7.2 from pyclaw output"
-	(cd source/figure_7.2 && python makefig.py $(BUILD_DIR)/$@)
+	(cd source/figure_7.2 && $(MAKE) $@)
 
 figure_7.2/experiment: source/figure_7.2/experiment/shockbubble.py source/figure_7.2/experiment/Makefile 
 	@mkdir -p $(BUILD_DIR)/$@	
