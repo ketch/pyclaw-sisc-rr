@@ -38,7 +38,7 @@ Appending /experiment to the make target will try to reproduce the experiment on
 
    make table_1/experiment
 
-You will need a functioning PyClaw 0.9 installation to run these experiments.  Instructions for installing PyClaw are available at http://numerics.kaust.edu.sa/pyclaw.  Additional dependencies for some of the experiments include PETSc (to enable the parallel petclaw features for scalability testing) and scipy (to enable numerical integration in the Shock-Bubble interaction experiment).
+You will need a functioning PyClaw 1.0 installation to run these experiments.  Instructions for installing PyClaw are available at http://numerics.kaust.edu.sa/pyclaw.  Additional dependencies for some of the experiments include PETSc (to enable the parallel petclaw features for scalability testing) and scipy (to enable numerical integration in the Shock-Bubble interaction experiment).
 
 Sometimes it is not possible to automate reproduction of a computational experiment due to dependencies on a specific hardware or software configuration.  In this situation, complete, detailed instructions and any needed scripts for reproducing the archived data are simultaneously printed to the screen and copied to the build/ directory in lieu of an automated experimental run.  
 
