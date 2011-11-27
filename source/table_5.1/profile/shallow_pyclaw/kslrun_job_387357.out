@@ -1,0 +1,12 @@
+yes
+/home/amal/clawpack/pyclaw/apps/shallow/2d
+2011-06-26 16:21:01,559 INFO CLAW: Solution 0 computed for time t=0.000000
+steps 465
+2011-06-26 16:34:27,118 INFO CLAW: Solution 1 computed for time t=2.500000
+yes
+/home/amal/clawpack/pyclaw/apps/shallow/2d
+2011-06-26 16:34:30,155 INFO CLAW: Solution 0 computed for time t=0.000000
+steps 465
+2011-06-26 16:47:47,302 INFO CLAW: Solution 1 computed for time t=2.500000
+Error:  None
+first call 808.980779886 second call 800.184566975

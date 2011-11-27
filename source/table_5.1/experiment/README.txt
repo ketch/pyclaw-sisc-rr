@@ -6,6 +6,7 @@ implemented in both Clawpack and PyClaw on an Intel Xeon and an IBM BlueGene/P.
 
 The following are manual instructions for reproducing the experiment on the BlueGene/P.  Reproducing this experiment is
 not automated because it relies on a development version of PyClaw that must be specifically activated.
+These instructions are specific to reproduce the experiment on IBM BlueGene/P, refer to the notes in the last section regarding reproducing the experiment on Intel Xeon.
 
 Common Environment Software (IBM BlueGene/P) 
 ==========================================
@@ -74,5 +75,11 @@ For Acoustics Applications: ??
 | $ make_clawpack .data
 | $ kslrun -a <account_number> -n 1 -t <wall_time> -p 1 -m SMP -r  "./xclaw"
 
-
+Reproducing the Experiment on Intel Xeon
+========================================
+The experiment can be similarly reproduced on Intel Xeon. The software versions for the experiment on Intel Xeon are
+- EPD 6.2.2 (64-bit) with Python 2.6.5 (r265:79063, May 28 2010, 15:24:16) and numpy 1.6.0
+- GCC 4.0.1 (Apple Inc. build 5488)] on darwin
+- petsc4py 1.1.2
+- PETSc 3.1p8
 

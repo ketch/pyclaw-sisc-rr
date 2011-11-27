@@ -37,7 +37,7 @@ Note about the timing results in the figure:
 Local to Global: The execution time of method localToGlobal
 Global to Local: The execution time of method globalToLocal
 CFL Reduce: The execution time of method max of petsc4py.PETSc.Vec class
-Parallel Initialization: The execution time of methods init_q_da and init_aux_da **
+Parallel Initialization: The execution time of methods init_q_da and init_aux_da
 Serial Computations: The execution time for  evolve_to_time method excluding the execution time of localToGlobal, GlobalToLocal and petsc4py.PETSc.Vec max methods
 Total Efficiency (for n processes): is the total execution time for one process over the total execution time for n processes.
 
