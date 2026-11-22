@@ -1,3 +1,15 @@
+NOTE ON THIS COPY (added 2026)
+==============================
+
+This repository was originally hosted on Bitbucket (bitbucket.org/ahmadia/pyclaw-sisc-rr), which deleted all Mercurial repositories in 2020.  It was recovered from the Software Heritage archive and converted to git.
+
+Two data files are too large for GitHub (over 100 MB) and have been removed from this copy, including from its history:
+
+   source/figure_7.4/experiment/_output/claw_p_coarsened.ptc0000       (288 MB)
+   source/figure_7.5/experiment/_output/claw_p_coarsened.ptc0200.bz2   (199 MB)
+
+The complete repository, including these two files and the full original history, is archived on Zenodo: DOI TO BE ADDED
+
 ABOUT THIS REPOSITORY
 ================
 
