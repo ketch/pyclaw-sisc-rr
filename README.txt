@@ -8,7 +8,7 @@ Two data files are too large for GitHub (over 100 MB) and have been removed from
    source/figure_7.4/experiment/_output/claw_p_coarsened.ptc0000       (288 MB)
    source/figure_7.5/experiment/_output/claw_p_coarsened.ptc0200.bz2   (199 MB)
 
-The complete repository, including these two files and the full original history, is archived on Zenodo: DOI TO BE ADDED
+The complete repository, including these two files and the full original history, is archived on Zenodo: https://doi.org/10.5281/zenodo.24432819
 
 ABOUT THIS REPOSITORY
 ================
